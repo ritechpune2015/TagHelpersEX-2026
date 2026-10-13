@@ -1,0 +1,59 @@
+﻿@model TagHelpersEX.Models.Customer
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <h2> Create Form</h2>
+    @{
+        List<SelectListItem> lst = new List<SelectListItem>();
+        lst.Add(new SelectListItem() { Text = "Pune", Value = "1" });
+        lst.Add(new SelectListItem() { Text = "Mumbai", Value = "2" });
+        lst.Add(new SelectListItem() { Text = "Delhi", Value = "3" });
+        lst.Add(new SelectListItem() { Text = "Noida", Value = "4" });
+    }
+       <form asp-controller="Home" asp-action="Save" method="Post">
+           <div>
+               <label asp-for="Name"></label>
+               <div>
+                   <input asp-for="Name"  />
+               </div>
+           </div>
+           <div>
+               <label asp-for="EmailID"></label>
+               <div>
+                   <input asp-for="EmailID" />
+               </div>
+            </div>
+            <div>
+                <label asp-for="Address"></label>
+                <div>
+                    <textarea asp-for="Address"></textarea>
+                </div>
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <div>
+                    <input type="password" asp-for="Password" />
+                </div>
+            </div>
+            <div>
+                <label asp-for="CityName"></label>
+                <div>
+                   <select asp-for="CityName" asp-items="lst">
+
+                   </select>
+                </div>
+            </div>
+            <div>
+                <label asp-for="IsActive"></label>
+                <div>
+                    <input asp-for="IsActive" />
+                </div>
+            </div>
+           <input type="submit" value="Save" />
+       </form>
+    </body>
+    </html>

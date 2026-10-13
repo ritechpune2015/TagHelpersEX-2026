@@ -1,0 +1,14 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+       <h2> Home Index </h2>
+       <a asp-action="SayHello"> Go to Say Hello</a> <br />
+       <a asp-action="Index" asp-controller="Test"> Go to Index </a> <br />
+       <a asp-action="SayBye" asp-controller="Test" asp-route-name="sunil" asp-route-email="sunil@gmail.com">Go to Say Bye</a>
+       <a asp-action="Create" asp-controller="Test"> Form </a>
+    </body>
+    </html>
