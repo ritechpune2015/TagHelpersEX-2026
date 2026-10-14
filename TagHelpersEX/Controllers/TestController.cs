@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using TagHelpersEX.Models;
 
 namespace TagHelpersEX.Controllers
 {
@@ -16,6 +18,8 @@ namespace TagHelpersEX.Controllers
 
         public IActionResult Create()
         {
+            var lst = Category.GetCategories();
+            ViewBag.Categories = new SelectList(lst, "CategoryID", "CategoryName");
             return View();
         }
     }
